@@ -31,7 +31,7 @@ func generate_question(enemy_type):
 	print(quest_data)
 	quest_type = quest_data.get("type")
 	var choices = quest_data.get("choices")
-	$Label.text = quest_data.get("question")
+	$TextPanel/Label.text = quest_data.get("question")
 	print(choices)
 	match quest_type:
 		1:
