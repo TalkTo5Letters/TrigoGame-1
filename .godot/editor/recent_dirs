@@ -1,3 +1,4 @@
+res://Questions
 res://scenes/levels/main_levels
 res://scenes/objects
 res://scenes/levels
@@ -8,7 +9,6 @@ res://autoload
 res://scenes/characters/partner
 res://scenes/characters/enemy1
 res://scenes/fight_events
-res://Questions
 /home/quertzy/Documents/godot/TrigoGame/Questions/
 res://Dialogue
 res://Dialogue/level1/Sakura
