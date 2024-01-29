@@ -15,9 +15,9 @@ func _process(delta):
 func check_answer_state(state):
 	var damage = int(quest_data.get("damage"))
 	if state == true:
-		print($"../enemy_stat/ProgressBar".value )
-		$"../enemy_stat/ProgressBar".value -= damage
-		if $"../enemy_stat/ProgressBar".value <= 0:
+		print($"../enemy_stat/TextureProgressBar".value )
+		$"../enemy_stat/TextureProgressBar".value -= damage
+		if $"../enemy_stat/TextureProgressBar".value <= 0:
 			kill_enemy()
 			return
 	if state == false:
@@ -25,7 +25,7 @@ func check_answer_state(state):
 	$"..".reload()
 
 func kill_enemy():
-	$"../Label".text = "Enemy Killed!"
+	$"../TextPanel/Label".text = "Enemy Killed!"
 	await get_tree().create_timer(5).timeout
 	KillList.level1[Global.current_enemy] = true
 	print(KillList.level1.get(Global.current_enemy))

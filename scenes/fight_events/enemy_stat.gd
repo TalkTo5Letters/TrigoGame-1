@@ -6,8 +6,8 @@ func _ready():
 	match enemy_type:
 		1:
 			hp = 200
-	$ProgressBar.value = hp
-	$ProgressBar.max_value = hp
+	$TextureProgressBar.max_value = hp
+	$TextureProgressBar.value = hp
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
