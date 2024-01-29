@@ -1,6 +1,38 @@
-[gd_scene load_steps=2 format=3 uid="uid://dplmjdfapcl04"]
+[gd_scene load_steps=4 format=3 uid="uid://dplmjdfapcl04"]
 
 [ext_resource type="Script" path="res://scenes/fight_events/multiple_choice/multiplechoice_drag_preview.gd" id="1_g1j72"]
+[ext_resource type="Texture2D" uid="uid://bc18cv1bcu1qo" path="res://graphics/pvp_ui.png" id="2_phyl1"]
 
-[node name="Node2D" type="Button"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_8awnh"]
+atlas = ExtResource("2_phyl1")
+region = Rect2(792, 326, 128, 100)
+
+[node name="Button" type="Control"]
+z_index = 2
+layout_mode = 3
+anchors_preset = 0
+offset_right = 154.0
+offset_bottom = 120.0
+mouse_filter = 2
 script = ExtResource("1_g1j72")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+z_index = 2
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(1.2, 1.2)
+mouse_filter = 2
+texture = SubResource("AtlasTexture_8awnh")
+
+[node name="Label" type="Label" parent="."]
+z_index = 3
+layout_mode = 0
+offset_left = 7.0
+offset_top = 27.0
+offset_right = 147.0
+offset_bottom = 101.0
+text = "asdas"
+horizontal_alignment = 1
+vertical_alignment = 1
+autowrap_mode = 1

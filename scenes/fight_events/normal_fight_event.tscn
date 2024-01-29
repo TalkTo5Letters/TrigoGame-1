@@ -1,32 +1,46 @@
-[gd_scene load_steps=10 format=3 uid="uid://b6ixm6w4800xs"]
+[gd_scene load_steps=15 format=3 uid="uid://b6ixm6w4800xs"]
 
 [ext_resource type="Script" path="res://scenes/fight_events/normal_fight_event.gd" id="1_8f857"]
-[ext_resource type="Texture2D" uid="uid://bojbiuccr6f84" path="res://graphics/vlcsnap_2023_12_01_10h37m31s394.0.jpg" id="1_g14fb"]
+[ext_resource type="Texture2D" uid="uid://c4icdh01m2a8v" path="res://graphics/pvp_ui_bg.png" id="2_e7mk8"]
 [ext_resource type="PackedScene" uid="uid://b33phw1sfyhyf" path="res://Questions/question_generator.tscn" id="2_ttiqy"]
 [ext_resource type="Script" path="res://scenes/fight_events/Button.gd" id="4_sfnrk"]
 [ext_resource type="Script" path="res://scenes/fight_events/Button2.gd" id="5_io6vd"]
 [ext_resource type="Script" path="res://scenes/fight_events/check_ans.gd" id="6_wq3mh"]
 [ext_resource type="Script" path="res://scenes/fight_events/enemy_stat.gd" id="7_pmpr5"]
 [ext_resource type="AudioStream" uid="uid://c4crn0gldwt8u" path="res://Music/Insidges.ogg" id="8_sxko4"]
+[ext_resource type="Texture2D" uid="uid://bc18cv1bcu1qo" path="res://graphics/pvp_ui.png" id="8_yx6ve"]
 
 [sub_resource type="Theme" id="Theme_iqgh5"]
 /fonts/g = null
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_qhpma"]
+atlas = ExtResource("8_yx6ve")
+region = Rect2(490, 385, 70, 292)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y123s"]
+atlas = ExtResource("8_yx6ve")
+region = Rect2(970, 193, 76, 309)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ckblv"]
+atlas = ExtResource("8_yx6ve")
+region = Rect2(945, 13, 126, 166)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wbwb0"]
+atlas = ExtResource("8_yx6ve")
+region = Rect2(22, 251, 360, 435)
+
 [node name="normal_fight_event" type="Control"]
 layout_mode = 3
 anchors_preset = 0
+mouse_filter = 1
 script = ExtResource("1_8f857")
-
-[node name="Sprite2D" type="Sprite2D" parent="."]
-z_index = -1
-position = Vector2(543, 334)
-texture = ExtResource("1_g14fb")
 
 [node name="QuestionGenerator" parent="." instance=ExtResource("2_ttiqy")]
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position = Vector2(540, 360)
 
+<<<<<<< Updated upstream
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(648, 144)
 layout_mode = 0
@@ -42,6 +56,8 @@ autowrap_mode = 3
 clip_text = true
 max_lines_visible = 3
 
+=======
+>>>>>>> Stashed changes
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 603.0
@@ -67,13 +83,59 @@ script = ExtResource("5_io6vd")
 script = ExtResource("6_wq3mh")
 
 [node name="enemy_stat" type="Node2D" parent="."]
+position = Vector2(324, 232)
 script = ExtResource("7_pmpr5")
 
 [node name="ProgressBar" type="ProgressBar" parent="enemy_stat"]
+visible = false
 offset_right = 428.0
 offset_bottom = 27.0
+mouse_filter = 2
 max_value = 250.0
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="enemy_stat"]
+offset_left = 652.0
+offset_top = -61.0
+offset_right = 728.0
+offset_bottom = 248.0
+mouse_filter = 2
+texture_under = SubResource("AtlasTexture_qhpma")
+texture_over = SubResource("AtlasTexture_y123s")
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("8_sxko4")
 autoplay = true
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(540, 360)
+texture = ExtResource("2_e7mk8")
+
+[node name="TextPanel" type="Sprite2D" parent="."]
+position = Vector2(450, 100)
+texture = ExtResource("8_yx6ve")
+region_enabled = true
+region_rect = Rect2(26, 10, 902, 198)
+
+[node name="Label" type="Label" parent="TextPanel"]
+z_index = 1
+custom_minimum_size = Vector2(648, 144)
+offset_left = -355.0
+offset_top = -58.0
+offset_right = 503.0
+offset_bottom = 113.0
+scale = Vector2(0.87328, 0.584839)
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 35
+text = "sdfsdfsdf"
+autowrap_mode = 3
+clip_text = true
+max_lines_visible = 3
+
+[node name="Sprite2D3" type="Sprite2D" parent="."]
+position = Vector2(1014, 85)
+texture = SubResource("AtlasTexture_ckblv")
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(178, 455)
+texture = SubResource("AtlasTexture_wbwb0")
