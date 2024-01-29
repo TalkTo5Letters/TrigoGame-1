@@ -1,0 +1,49 @@
+[gd_scene load_steps=5 format=3 uid="uid://k1mdovrk8cr7"]
+
+[ext_resource type="Texture2D" uid="uid://bt2dvsfgwwnfk" path="res://graphics/Untitled.png" id="1_20mwa"]
+
+[sub_resource type="GDScript" id="GDScript_3pjbr"]
+script/source = "extends CharacterBody2D
+
+signal dialogue_pop_up
+
+func _on_area_2d_body_entered(body):
+	dialogue_pop_up.emit() 
+"
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ljspv"]
+size = Vector2(24, 32)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_qt01a"]
+radius = 43.0
+
+[node name="Node2D" type="CharacterBody2D"]
+light_mask = 0
+visibility_layer = 5
+z_as_relative = false
+collision_layer = 2
+collision_mask = 4
+slide_on_ceiling = false
+floor_block_on_wall = false
+platform_floor_layers = 4294967044
+platform_wall_layers = 4
+script = SubResource("GDScript_3pjbr")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("1_20mwa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+z_as_relative = false
+shape = SubResource("RectangleShape2D_ljspv")
+
+[node name="Area2D" type="Area2D" parent="."]
+light_mask = 4
+visibility_layer = 4
+input_pickable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_qt01a")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]
