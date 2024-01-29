@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://b6ixm6w4800xs"]
+[gd_scene load_steps=10 format=3 uid="uid://b6ixm6w4800xs"]
 
 [ext_resource type="Script" path="res://scenes/fight_events/normal_fight_event.gd" id="1_8f857"]
 [ext_resource type="Texture2D" uid="uid://bojbiuccr6f84" path="res://graphics/vlcsnap_2023_12_01_10h37m31s394.0.jpg" id="1_g14fb"]
@@ -8,6 +8,9 @@
 [ext_resource type="Script" path="res://scenes/fight_events/check_ans.gd" id="6_wq3mh"]
 [ext_resource type="Script" path="res://scenes/fight_events/enemy_stat.gd" id="7_pmpr5"]
 [ext_resource type="AudioStream" uid="uid://c4crn0gldwt8u" path="res://Music/Insidges.ogg" id="8_sxko4"]
+
+[sub_resource type="Theme" id="Theme_iqgh5"]
+/fonts/g = null
 
 [node name="normal_fight_event" type="Control"]
 layout_mode = 3
@@ -27,10 +30,10 @@ position = Vector2(540, 360)
 [node name="Label" type="Label" parent="."]
 custom_minimum_size = Vector2(648, 144)
 layout_mode = 0
-offset_left = 241.0
+offset_left = 143.0
 offset_top = 9.0
-offset_right = 889.0
-offset_bottom = 153.0
+offset_right = 939.0
+offset_bottom = 233.0
 scale = Vector2(1, 0.906123)
 theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
@@ -55,6 +58,7 @@ offset_left = 778.0
 offset_top = 629.0
 offset_right = 962.0
 offset_bottom = 706.0
+theme = SubResource("Theme_iqgh5")
 theme_override_font_sizes/font_size = 50
 text = "Restart"
 script = ExtResource("5_io6vd")
