@@ -1414,7 +1414,7 @@ size = Vector2(227.125, 247.5)
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1a3u7"]
 vertices = PackedVector2Array(28, 1073, 35, 1112, 0, 1123, -31, 1109, -31, 1062, 28, 958, -83, 841, -68, 697, -132, 750, -122, 634, 82, 386, 17, 396, -44, 6, -109, -3, -102, -64, 28, -177, -89, -225, 35, -508, -89, -226, -93, -438, -68, -526, -4, -532)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(10, 7, 9, 11), PackedInt32Array(12, 10, 11, 13, 14), PackedInt32Array(15, 12, 14, 16, 17), PackedInt32Array(17, 16, 18), PackedInt32Array(17, 18, 19, 20, 21)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-41, 1063, -41, 1116, 0, 1134, 47, 1120, 38, 1072, 38, 958, -57, 698, 93, 388, -33, 6, 38, -176, 46, -514, -2, -543, -77, -536, -103, -441, -99, -226, -112, -65, -120, -2, 6, 395, -132, 631, -143, 753, -92, 845)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-41, 1063, -41, 1116, 0, 1134, 47, 1120, 38, 1072, 38, 958, -57, 698, 93, 388, -33, 6, 38, -176, 46, -514, -2, -543, -77, -536, -103, -441, -99, -226, -112, -65, -120, -2, 6, 395, -132, 631, -129, 744, -92, 845)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="GDScript" id="GDScript_6rqxy"]

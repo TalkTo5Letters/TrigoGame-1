@@ -1,12 +1,14 @@
+Sprite2D
 CollisionShape2D
+ColorRect
+RigidBody2D
+DampedSpringJoint2D
 Area2D
 AnimationPlayer
-Sprite2D
 NavigationAgent2D
 NavigationRegion2D
 CharacterBody2D
 Node2D
 Node
-RigidBody2D
 LineEdit
 TextEdit
