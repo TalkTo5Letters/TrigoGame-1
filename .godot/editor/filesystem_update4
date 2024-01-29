@@ -7,4 +7,5 @@ res://scenes/levels/main_levels/Level_1.tscn
 res://scenes/objects/interactable.tscn
 res://scenes/characters/player/player.tscn
 res://scenes/levels/TestScene.tscn
-res://Questions/question_generator.gd
+res://scenes/fight_events/Button2.gd
+res://scenes/levels/main_levels/level1/CharacterBody2D.gd
