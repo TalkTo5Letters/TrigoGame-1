@@ -15,4 +15,4 @@ func _on_interactable_interactable_met():
 	print("gyahaha")
 	var player_position = Vector2.ZERO
 	Global.player_level1_pos = player_position
-	get_tree().change_scene_to_file("res://scenes/levels/TestScene.tscn")
+	get_tree().change_scene_to_file("res://scenes/levels/main_levels/ss_Lvl1[2]_scene.tscn")
