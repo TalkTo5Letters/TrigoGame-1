@@ -1,0 +1,112 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtyua4m7016ox"]
+
+[ext_resource type="PackedScene" uid="uid://d04uypd6pvbls" path="res://player_scripts/ss_player.tscn" id="2_fa1il"]
+[ext_resource type="Texture2D" uid="uid://b3p6hrc7nridg" path="res://graphics/LevelSpecific/map1[2]]/background.png" id="2_q145x"]
+[ext_resource type="Texture2D" uid="uid://bahvrsuk52qkj" path="res://graphics/LevelSpecific/map1[2]]/ground_lvl1[2].png" id="3_0e61q"]
+[ext_resource type="Texture2D" uid="uid://berugt1q8n0mb" path="res://graphics/LevelSpecific/map1[2]]/parallax_post_back_lvl1[2].png" id="4_n3ayd"]
+[ext_resource type="Texture2D" uid="uid://cdrt8dt0rovp3" path="res://graphics/LevelSpecific/map1[2]]/parallax_post_front_lvl1[2].png" id="5_jyhan"]
+[ext_resource type="Texture2D" uid="uid://bxabckwxwjbbw" path="res://graphics/LevelSpecific/map1[2]]/star1_lvl1[2].png" id="6_idfwm"]
+[ext_resource type="Texture2D" uid="uid://d3vnuamdpnai3" path="res://graphics/LevelSpecific/map1[2]]/star2_lvl1[2].png" id="7_xurmy"]
+[ext_resource type="Texture2D" uid="uid://wpvasd8qfdta" path="res://graphics/LevelSpecific/map1[2]]/star3_lvl1[2].png" id="8_ybg83"]
+[ext_resource type="Texture2D" uid="uid://djr3qnuag0183" path="res://graphics/LevelSpecific/map1[2]]/star4_lvl1[2].png" id="9_2dgwe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsqv"]
+size = Vector2(2642, 20)
+
+[node name="SS_TestScene" type="Node2D"]
+
+[node name="Player" parent="." instance=ExtResource("2_fa1il")]
+z_index = 1
+position = Vector2(-753, 44)
+
+[node name="GroundLvl1[2]" type="Sprite2D" parent="."]
+z_index = -1
+texture_filter = 1
+texture = ExtResource("3_0e61q")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+offset_left = -1665.0
+offset_top = 100.0
+offset_right = 2618.0
+offset_bottom = 321.0
+color = Color(0, 0, 0, 1)
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(321, 72)
+shape = SubResource("RectangleShape2D_hbsqv")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="Layer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(2000, 0)
+
+[node name="Background" type="Sprite2D" parent="ParallaxBackground/Layer"]
+z_index = -1
+texture_filter = 1
+position = Vector2(3, 11)
+texture = ExtResource("2_q145x")
+
+[node name="Background2" type="Sprite2D" parent="ParallaxBackground/Layer"]
+z_index = -1
+texture_filter = 1
+position = Vector2(4, -188)
+rotation = 3.14159
+texture = ExtResource("2_q145x")
+
+[node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 50)
+motion_scale = Vector2(0.1, 0.1)
+
+[node name="Star1Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer2"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 20)
+texture = ExtResource("6_idfwm")
+
+[node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 50)
+motion_scale = Vector2(0.5, 0.5)
+
+[node name="Star2Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer3"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("7_xurmy")
+
+[node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.25, 0.25)
+
+[node name="Star3Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer4"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("8_ybg83")
+
+[node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.8, 0.8)
+
+[node name="Star4Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer5"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("9_2dgwe")
+
+[node name="Layer6" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(2, 2)
+
+[node name="ParallaxPostBackLvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer6"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("4_n3ayd")
+
+[node name="Layer7" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_scale = Vector2(0.9, 0.9)
+
+[node name="ParallaxPostFrontLvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer7"]
+z_index = -1
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("5_jyhan")

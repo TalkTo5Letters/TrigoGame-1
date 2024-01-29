@@ -1559,7 +1559,6 @@ z_index = 1
 position = Vector2(-8, 1234)
 
 [node name="fog" type="PointLight2D" parent="Player"]
-visible = false
 position = Vector2(0.999992, 4)
 scale = Vector2(0.948125, 0.707812)
 energy = 1.05

@@ -7,3 +7,8 @@ res://Questions/question_generator.tscn
 res://scenes/objects/interactable.tscn
 res://scenes/characters/player/player.tscn
 res://scenes/levels/TestScene.tscn
+res://scenes/levels/main_levels/ss_Lvl1[2]_scene.tscn
+res://player_scripts/ss_player.tscn
+res://player_scripts/ss_movement.gd
+res://scenes/levels/main_levels/bg_parallax.gd
+res://scenes/levels/main_levels/door_teleport.gd

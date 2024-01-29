@@ -15,10 +15,9 @@ func _physics_process(delta):
 	#gravity my nigga 
 	if not Player.is_on_floor():
 		input_buffer.append(Vector2.DOWN)
-		print("nigga")
 	else:
 		input_buffer.erase(Vector2.DOWN)
-		print("happy nigga")
+
 		
 	#checks for keypresses, if found, append to bufferc
 	if Input.is_action_just_pressed("right"):
