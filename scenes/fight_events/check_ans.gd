@@ -25,7 +25,7 @@ func check_answer_state(state):
 	$"..".reload()
 
 func kill_enemy():
-	$"../Label".text = "Enemy Killed!"
+	$"../TextPanel/Label".text = "Enemy Killed!"
 	await get_tree().create_timer(5).timeout
 	KillList.level1[Global.current_enemy] = true
 	print(KillList.level1.get(Global.current_enemy))

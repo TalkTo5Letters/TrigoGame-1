@@ -61,4 +61,4 @@ func reload():
 			remove_child(input_box_gen)
 	print("reset")
 	generate_question(Global.enemy_type)
-	
+	$Timer/TextureProgressBar.timer_restart()

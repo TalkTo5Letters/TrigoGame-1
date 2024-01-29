@@ -1,5 +1,5 @@
-res://scenes/fight_events/multiple_choice/generate_button_multi.tscn
-res://scenes/fight_events/multiple_choice/multiplechoice_drag_preview.gd
+res://scenes/levels/TestScene.tscn
+res://scenes/fight_events/multiple_choice/GridContainer.gd
 res://scenes/levels/level1.tscn
 res://scenes/fight_events/text_input/input_box_parse.tscn
 res://scenes/fight_events/normal_fight_event.tscn
@@ -7,11 +7,11 @@ res://scenes/fight_events/fill_in_blanks/fill_in_parser.tscn
 res://Questions/question_generator.tscn
 res://scenes/objects/interactable.tscn
 res://scenes/characters/player/player.tscn
-res://scenes/levels/TestScene.tscn
-<<<<<<< Updated upstream
-res://Questions/question_generator.gd
-=======
+res://scenes/fight_events/multiple_choice/generate_button_multi.tscn
 res://scenes/fight_events/multiple_choice/multiplechoice_drag_preview.tscn
 res://scenes/fight_events/multiple_choice/multi_choice_grid.tscn
 res://scenes/fight_events/multiple_choice/create_droppable_area.tscn
->>>>>>> Stashed changes
+res://scenes/fight_events/fill_in_blanks/choice_gen.tscn
+res://scenes/fight_events/fill_in_blanks/button_gen.tscn
+res://scenes/fight_events/fill_in_blanks/droppable_area.tscn
+res://scenes/fight_events/fill_in_blanks/droppable_area_gen.tscn
