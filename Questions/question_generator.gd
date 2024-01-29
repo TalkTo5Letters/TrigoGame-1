@@ -6,7 +6,7 @@ var trigo_ques
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	easy_unitcir_QA = $Easy_unit_cir_QA
-	trigo_ques = $Node2
+	trigo_ques = $trig_func_ques
 
 func _process(delta):
 	pass
