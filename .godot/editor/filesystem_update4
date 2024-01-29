@@ -15,3 +15,4 @@ res://scenes/fight_events/fill_in_blanks/choice_gen.tscn
 res://scenes/fight_events/fill_in_blanks/button_gen.tscn
 res://scenes/fight_events/fill_in_blanks/droppable_area.tscn
 res://scenes/fight_events/fill_in_blanks/droppable_area_gen.tscn
+res://scenes/fight_events/Button2.gd

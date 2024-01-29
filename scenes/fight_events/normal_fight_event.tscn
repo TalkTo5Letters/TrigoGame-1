@@ -67,12 +67,11 @@ text = "Run"
 script = ExtResource("4_sfnrk")
 
 [node name="Button2" type="Button" parent="."]
-visible = false
 layout_mode = 0
-offset_left = 778.0
-offset_top = 629.0
-offset_right = 962.0
-offset_bottom = 706.0
+offset_left = 20.0
+offset_top = 173.0
+offset_right = 204.0
+offset_bottom = 250.0
 theme = SubResource("Theme_iqgh5")
 theme_override_font_sizes/font_size = 50
 text = "Restart"
