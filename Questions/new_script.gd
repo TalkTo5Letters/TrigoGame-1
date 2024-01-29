@@ -174,3 +174,4 @@ func Easy_UnitCir_QA_degrees_vals():
 		"damage": 25,
 	}
 	return data
+
