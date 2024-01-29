@@ -1,6 +1,5 @@
-[gd_scene load_steps=5 format=3 uid="uid://b33phw1sfyhyf"]
+[gd_scene load_steps=4 format=3 uid="uid://b33phw1sfyhyf"]
 
-[ext_resource type="Script" path="res://generate_question.gd" id="1_b4y5i"]
 [ext_resource type="Script" path="res://Questions/question_generator.gd" id="1_n7s3j"]
 [ext_resource type="Script" path="res://Questions/new_script.gd" id="2_vtf3o"]
 [ext_resource type="Script" path="res://Questions/trig_func_ques.gd" id="4_k3vc1"]
@@ -8,11 +7,10 @@
 [node name="QuestionGenerator" type="Node2D"]
 script = ExtResource("1_n7s3j")
 
-[node name="Node" type="Node" parent="."]
-script = ExtResource("1_b4y5i")
+[node name="Node3" type="Node" parent="."]
 
 [node name="Easy_unit_cir_QA" type="Node" parent="."]
 script = ExtResource("2_vtf3o")
 
-[node name="Node2" type="Node" parent="."]
+[node name="trig_func_ques" type="Node" parent="."]
 script = ExtResource("4_k3vc1")
