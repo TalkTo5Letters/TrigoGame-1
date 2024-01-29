@@ -26,7 +26,7 @@ func generate_trigo_func():
 			trigo_func = "cos"
 	B = str(rgen.randi_range(1, 4) * 2) 
 	var temp_c = int(B)*(rgen.randi_range(1,2)*2)
-	period = "2pi/ " + str(B)
+	period = "2pi/" + str(B)
 	phase_shift = "2pi/" + str(temp_c)
 	vertical_shift = str(rgen.randi_range(-5, 5))
 	var phase_shift_sign_rng = rgen.randi_range(1, 2)
