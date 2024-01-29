@@ -1,7 +1,9 @@
-[gd_scene load_steps=17 format=3 uid="uid://bhhsiesieayn7"]
+[gd_scene load_steps=19 format=3 uid="uid://bhhsiesieayn7"]
 
+[ext_resource type="Texture2D" uid="uid://cwgalg8iclaxq" path="res://graphics/light.png" id="1_2dne0"]
 [ext_resource type="PackedScene" uid="uid://t3sr75pxjqim" path="res://scenes/characters/player/player.tscn" id="1_cx0ug"]
 [ext_resource type="Texture2D" uid="uid://cuytdxdhrglxb" path="res://graphics/Tilemaps/lvl1tilemap.png" id="2_4t2ib"]
+[ext_resource type="Texture2D" uid="uid://b85nlip5lg2vh" path="res://graphics/fog.png" id="2_v4mqb"]
 [ext_resource type="PackedScene" uid="uid://ca7ndbpcqmaqx" path="res://scenes/objects/interactable.tscn" id="4_kmy5y"]
 [ext_resource type="Script" path="res://scenes/levels/main_levels/Area2D.gd" id="4_lf8u0"]
 [ext_resource type="Script" path="res://scenes/levels/main_levels/door_teleport.gd" id="4_v764y"]
@@ -22,8 +24,10 @@ texture = ExtResource("2_4t2ib")
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-12.7279, -1.14905, 13.2583, -1.14905, 13.435, 12.1092, -12.7279, 12.1092)
 3:0/size_in_atlas = Vector2i(2, 2)
 3:0/0 = 0
+3:0/0/y_sort_origin = -3
 3:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 3:0/0/physics_layer_0/angular_velocity = 0.0
+3:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
 5:0/size_in_atlas = Vector2i(2, 2)
 5:0/0 = 0
 5:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
@@ -1208,6 +1212,10 @@ texture = ExtResource("2_4t2ib")
 53:2/0 = 0
 53:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 53:2/0/physics_layer_0/angular_velocity = 0.0
+50:8/size_in_atlas = Vector2i(2, 3)
+50:8/0 = 0
+50:8/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+50:8/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_lqaj0"]
 texture = ExtResource("2_4t2ib")
@@ -1414,7 +1422,7 @@ size = Vector2(227.125, 247.5)
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1a3u7"]
 vertices = PackedVector2Array(28, 1073, 35, 1112, 0, 1123, -31, 1109, -31, 1062, 28, 958, -83, 841, -68, 697, -132, 750, -122, 634, 82, 386, 17, 396, -44, 6, -109, -3, -102, -64, 28, -177, -89, -225, 35, -508, -89, -226, -93, -438, -68, -526, -4, -532)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4, 6, 7), PackedInt32Array(7, 6, 8, 9), PackedInt32Array(10, 7, 9, 11), PackedInt32Array(12, 10, 11, 13, 14), PackedInt32Array(15, 12, 14, 16, 17), PackedInt32Array(17, 16, 18), PackedInt32Array(17, 18, 19, 20, 21)])
-outlines = Array[PackedVector2Array]([PackedVector2Array(-41, 1063, -41, 1116, 0, 1134, 47, 1120, 38, 1072, 38, 958, -57, 698, 93, 388, -33, 6, 38, -176, 46, -514, -2, -543, -77, -536, -103, -441, -99, -226, -112, -65, -120, -2, 6, 395, -132, 631, -129, 744, -92, 845)])
+outlines = Array[PackedVector2Array]([PackedVector2Array(-41, 1063, -41, 1116, 0, 1134, 47, 1120, 38, 1072, 38, 958, -57, 698, -57, 593, 93, 388, 23, 204, -67, 138, -33, 6, 38, -176, 46, -514, -2, -543, -77, -536, -103, -441, -99, -226, -179, -6, -149, 19, -152, 170, -37.7155, 257.262, -6, 389, -116, 489, -157, 556, -132, 631, -129, 744, -92, 845)])
 source_geometry_group_name = &"navigation_polygon_source_group"
 
 [sub_resource type="GDScript" id="GDScript_6rqxy"]
@@ -1506,9 +1514,61 @@ y_sort_enabled = true
 metadata/_edit_horizontal_guides_ = [-338.0]
 metadata/_edit_vertical_guides_ = [-601.0]
 
+[node name="abyss" type="PointLight2D" parent="."]
+position = Vector2(-26, 2020)
+scale = Vector2(8.5275, 3.63)
+energy = 16.0
+blend_mode = 1
+range_layer_min = -2
+range_layer_max = 6
+range_item_cull_mask = 7
+texture = ExtResource("1_2dne0")
+
+[node name="abyss4" type="PointLight2D" parent="."]
+position = Vector2(24, -1437)
+scale = Vector2(8.5275, 3.63)
+energy = 16.0
+blend_mode = 1
+range_layer_min = -2
+range_layer_max = 6
+range_item_cull_mask = 7
+texture = ExtResource("1_2dne0")
+
+[node name="abyss2" type="PointLight2D" parent="."]
+position = Vector2(-938.188, 513.5)
+scale = Vector2(2.91406, 12.9425)
+energy = 16.0
+blend_mode = 1
+range_layer_min = -2
+range_layer_max = 6
+range_item_cull_mask = 7
+texture = ExtResource("1_2dne0")
+
+[node name="abyss3" type="PointLight2D" parent="."]
+position = Vector2(855, 547)
+scale = Vector2(2.91406, 12.9425)
+energy = 16.0
+blend_mode = 1
+range_layer_min = -2
+range_layer_max = 6
+range_item_cull_mask = 7
+texture = ExtResource("1_2dne0")
+
 [node name="Player" parent="." instance=ExtResource("1_cx0ug")]
 z_index = 1
 position = Vector2(-8, 1234)
+
+[node name="fog" type="PointLight2D" parent="Player"]
+visible = false
+position = Vector2(0.999992, 4)
+scale = Vector2(0.948125, 0.707812)
+energy = 1.05
+blend_mode = 1
+range_layer_min = -2
+range_layer_max = 6
+range_item_cull_mask = 7
+texture = ExtResource("2_v4mqb")
+texture_scale = 1.6
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1524,11 +1584,12 @@ layer_2/tile_data = PackedInt32Array(-2162688, 1179648, 1, -3080192, 2293760, 0,
 layer_3/name = "objects"
 layer_3/y_sort_enabled = true
 layer_3/z_index = 1
-layer_3/tile_data = PackedInt32Array(-2490368, 655360, 3, -3342336, 1507328, 12, 5177343, 65536, 0, 5111809, 0, 1, 2686963, 196608, 0, 1310727, 196608, 2, 1245190, 131072, 3)
+layer_3/tile_data = PackedInt32Array(-2490368, 655360, 3, -3342336, 1507328, 12, 5177343, 65536, 0, 5111809, 0, 1, 2686963, 196608, 0, 1310727, 196608, 2, 1245190, 131072, 3, 196597, 3276800, 8)
 layer_4/name = "wall"
 layer_4/tile_data = PackedInt32Array(1179657, 458752, 0, 65521, 851968, 1, 65522, 917504, 1, 65523, 983040, 1, 65524, 1048576, 1, 2621432, 851968, 268435457, 2621431, 917504, 268435457, 2621430, 983040, 268435457, 2621429, 1048576, 268435457, 4784129, 458752, 0)
 
 [node name="Area2D" type="Area2D" parent="TileMap" node_paths=PackedStringArray("collision_shape_path", "player")]
+position = Vector2(-139, 34)
 script = ExtResource("4_lf8u0")
 collision_shape_path = NodePath("CollisionShape2D")
 player = NodePath("../../Player")
@@ -1574,6 +1635,14 @@ libraries = {
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Twinkie/CharacterBody2D/Area2D"]
 scale = Vector2(7.5, 7.5)
 shape = SubResource("CircleShape2D_202mi")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+z_index = 1
+offset_left = -1681.0
+offset_top = -1486.0
+offset_right = 1270.0
+offset_bottom = 1327.0
 
 [connection signal="area_entered" from="TileMap/Area2D" to="Player" method="_on_area_2d_area_entered"]
 [connection signal="area_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_exited"]

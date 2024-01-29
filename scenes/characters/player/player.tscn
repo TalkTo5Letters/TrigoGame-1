@@ -264,16 +264,16 @@ collision_layer = 7
 collision_mask = 7
 collision_priority = 2.0
 
+[node name="Camera2D" type="Camera2D" parent="."]
+zoom = Vector2(2.5, 2.5)
+position_smoothing_enabled = true
+
 [node name="PlayerMovement" type="Node2D" parent="."]
 script = ExtResource("2_d58uu")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 3)
 shape = SubResource("RectangleShape2D_b3fnm")
-
-[node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(2.5, 2.5)
-position_smoothing_enabled = true
 
 [node name="AnimationTree" type="AnimationTree" parent="."]
 libraries = {
@@ -313,23 +313,19 @@ region_rect = Rect2(192, 32, 320, 384)
 [node name="PlayerInput" type="Node2D" parent="."]
 script = ExtResource("4_o07tj")
 
-[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+[node name="DampedSpringJoint2D" type="GrooveJoint2D" parent="."]
 position = Vector2(5, -17)
 rotation = -2.14326
 node_a = NodePath("..")
 node_b = NodePath("../RigidBody2D")
-length = 11.0
-stiffness = 64.0
-damping = 16.0
+length = 4.0
 
 [node name="RigidBody2D" type="RigidBody2D" parent="."]
 position = Vector2(12, -22)
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D"]
-position = Vector2(2, -2)
 shape = SubResource("CircleShape2D_b66nm")
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
 texture_filter = 1
-position = Vector2(3, -1)
 texture = ExtResource("6_3hn1r")

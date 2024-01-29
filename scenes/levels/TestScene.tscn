@@ -69,6 +69,7 @@ offset_bottom = 40.0
 script = ExtResource("9_d62rt")
 
 [node name="fight_scene3" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
