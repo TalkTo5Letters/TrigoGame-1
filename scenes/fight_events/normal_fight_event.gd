@@ -10,16 +10,27 @@ var fill_in_gen_scene
 var input_box_gen_scene
 var input_box_gen
 var quest_type
+var enemy_id
+var enemy_type
+var enemy_name
+var enemy_texture
+var question_index = 0
 # Called when the node enters the scene tree for the first time.
-
 func _ready():
+	var Global = get_node("/root/Global")
+	enemy_id = Global.current_enemy_data[0]
+	enemy_type = Global.current_enemy_data[1]
+	enemy_name = Global.current_enemy_data[2]
+	enemy_texture = load(Global.current_enemy_data[3])
+	$Sprite2D5.texture = enemy_texture
 	$player_hp.value = Global.hp
 	quest_gen = $QuestionGenerator
 	multi_choice_gen_scene = preload("res://scenes/fight_events/multiple_choice/multi_choice_grid.tscn")
 	area_drop_gen_scene = preload("res://scenes/fight_events/multiple_choice/create_droppable_area.tscn")
 	fill_in_gen_scene = preload("res://scenes/fight_events/fill_in_blanks/fill_in_parser.tscn")
 	input_box_gen_scene = preload("res://scenes/fight_events/text_input/input_box_parse.tscn")
-	generate_question(Global.enemy_type)
+	$EnemyName.text = enemy_name
+	generate_question(enemy_type)
 
 
 # Called every frame. 'delta' is the elapsed time since the predvious frame.
@@ -27,6 +38,8 @@ func _process(delta):
 	pass
 
 func generate_question(enemy_type):
+	question_index += 1
+	$TextPanel/QuestionNo.text = str(question_index)
 	var quest_data = quest_gen.get_question(enemy_type)
 	$check_ans.quest_data = quest_data
 	print(quest_data)
@@ -62,4 +75,5 @@ func reload():
 			remove_child(input_box_gen)
 	print("reset")
 	generate_question(Global.enemy_type)
+	$Timer.set_paused(false)
 	$Timer/TextureProgressBar.timer_restart()

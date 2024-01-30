@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://cbvx64mgfep1d"]
+[gd_scene load_steps=12 format=3 uid="uid://cbvx64mgfep1d"]
 
 [ext_resource type="Script" path="res://scenes/levels/TestScene.gd" id="1_pf7ui"]
 [ext_resource type="Texture2D" uid="uid://dkk4lnkgrxcl6" path="res://graphics/icon.svg" id="1_w0lke"]
@@ -7,7 +7,6 @@
 [ext_resource type="PackedScene" uid="uid://k1mdovrk8cr7" path="res://scenes/characters/partner/partner.tscn" id="4_was5n"]
 [ext_resource type="Script" path="res://scenes/levels/Node2D2.gd" id="5_lgh7f"]
 [ext_resource type="PackedScene" uid="uid://t3sr75pxjqim" path="res://scenes/characters/player/player.tscn" id="6_i3ujp"]
-[ext_resource type="Script" path="res://scenes/characters/player/player.gd" id="7_rp0ea"]
 [ext_resource type="PackedScene" uid="uid://bf48yrxyt7h25" path="res://scenes/characters/enemy1/enemy1.tscn" id="8_qwvuh"]
 [ext_resource type="Script" path="res://scenes/levels/fight_scene.gd" id="9_d62rt"]
 
@@ -51,7 +50,6 @@ script = ExtResource("5_lgh7f")
 
 [node name="Player" parent="." instance=ExtResource("6_i3ujp")]
 position = Vector2(-111, -31)
-script = ExtResource("7_rp0ea")
 
 [node name="enemy1" parent="." instance=ExtResource("8_qwvuh")]
 position = Vector2(120, 223)

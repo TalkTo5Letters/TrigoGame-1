@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://b0t7wn82ufd1g"]
+[gd_scene load_steps=3 format=3 uid="uid://b0t7wn82ufd1g"]
 
 [ext_resource type="Script" path="res://scenes/fight_events/fill_in_blanks/button_preview.gd" id="1_ut3m3"]
+[ext_resource type="FontFile" uid="uid://dn6uysy7dmr03" path="res://graphics/Silkscreen-Regular.ttf" id="1_vjf44"]
 
 [node name="button_preview" type="Button"]
 anchors_preset = 15
@@ -8,4 +9,6 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_vjf44")
+text = "sdfsdfdsf"
 script = ExtResource("1_ut3m3")

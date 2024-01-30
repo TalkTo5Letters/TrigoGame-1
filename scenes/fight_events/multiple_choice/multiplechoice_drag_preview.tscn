@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://dplmjdfapcl04"]
+[gd_scene load_steps=5 format=3 uid="uid://dplmjdfapcl04"]
 
 [ext_resource type="Script" path="res://scenes/fight_events/multiple_choice/multiplechoice_drag_preview.gd" id="1_g1j72"]
 [ext_resource type="Texture2D" uid="uid://bc18cv1bcu1qo" path="res://graphics/pvp_ui.png" id="2_phyl1"]
+[ext_resource type="FontFile" uid="uid://dn6uysy7dmr03" path="res://graphics/Silkscreen-Regular.ttf" id="3_g3qa0"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_8awnh"]
 atlas = ExtResource("2_phyl1")
@@ -32,6 +33,7 @@ offset_left = 6.0
 offset_top = 23.0
 offset_right = 123.0
 offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("3_g3qa0")
 text = "asdas"
 horizontal_alignment = 1
 vertical_alignment = 1
