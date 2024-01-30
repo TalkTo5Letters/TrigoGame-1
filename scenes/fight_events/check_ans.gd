@@ -68,7 +68,7 @@ func _on_timer_timeout():
 func die():
 	Global.player_last_pos = Global.spawnpoint
 	Global.kill_list = []
-	Global.hp = 0
+	Global.hp = 100
 	$"../TextPanel/Label".text = "You died!"
 	Input.mouse_mode = 2
 	await get_tree().create_timer(2).timeout
