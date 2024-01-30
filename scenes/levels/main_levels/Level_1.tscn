@@ -1,9 +1,10 @@
-[gd_scene load_steps=19 format=3 uid="uid://bhhsiesieayn7"]
+[gd_scene load_steps=20 format=3 uid="uid://bhhsiesieayn7"]
 
-[ext_resource type="Texture2D" path="res://graphics/light.png" id="1_2dne0"]
+[ext_resource type="Texture2D" uid="uid://cwgalg8iclaxq" path="res://graphics/light.png" id="1_2dne0"]
+[ext_resource type="Script" path="res://scenes/levels/main_levels/Level_1.gd" id="1_cmrbb"]
 [ext_resource type="PackedScene" uid="uid://t3sr75pxjqim" path="res://scenes/characters/player/player.tscn" id="1_cx0ug"]
 [ext_resource type="Texture2D" uid="uid://cuytdxdhrglxb" path="res://graphics/Tilemaps/lvl1tilemap.png" id="2_4t2ib"]
-[ext_resource type="Texture2D" path="res://graphics/fog.png" id="2_v4mqb"]
+[ext_resource type="Texture2D" uid="uid://b85nlip5lg2vh" path="res://graphics/fog.png" id="2_v4mqb"]
 [ext_resource type="PackedScene" uid="uid://ca7ndbpcqmaqx" path="res://scenes/objects/interactable.tscn" id="4_kmy5y"]
 [ext_resource type="Script" path="res://scenes/levels/main_levels/Area2D.gd" id="4_lf8u0"]
 [ext_resource type="Script" path="res://scenes/levels/main_levels/door_teleport.gd" id="4_v764y"]
@@ -1511,6 +1512,7 @@ _data = {
 
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
+script = ExtResource("1_cmrbb")
 metadata/_edit_horizontal_guides_ = [-338.0]
 metadata/_edit_vertical_guides_ = [-601.0]
 

@@ -13,6 +13,7 @@ var quest_type
 # Called when the node enters the scene tree for the first time.
 
 func _ready():
+	$player_hp.value = Global.hp
 	quest_gen = $QuestionGenerator
 	multi_choice_gen_scene = preload("res://scenes/fight_events/multiple_choice/multi_choice_grid.tscn")
 	area_drop_gen_scene = preload("res://scenes/fight_events/multiple_choice/create_droppable_area.tscn")

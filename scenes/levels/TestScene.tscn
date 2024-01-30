@@ -1,5 +1,6 @@
-[gd_scene load_steps=12 format=3 uid="uid://cbvx64mgfep1d"]
+[gd_scene load_steps=13 format=3 uid="uid://cbvx64mgfep1d"]
 
+[ext_resource type="Script" path="res://scenes/levels/TestScene.gd" id="1_pf7ui"]
 [ext_resource type="Texture2D" uid="uid://dkk4lnkgrxcl6" path="res://graphics/icon.svg" id="1_w0lke"]
 [ext_resource type="Script" path="res://scenes/levels/teleport.gd" id="2_flntm"]
 [ext_resource type="PackedScene" uid="uid://b54d1hmerafoo" path="res://scenes/objects/tree.tscn" id="3_8luq5"]
@@ -17,6 +18,7 @@ size = Vector2(119, 117)
 size = Vector2(117, 8)
 
 [node name="level1" type="Node2D"]
+script = ExtResource("1_pf7ui")
 
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 position = Vector2(145, 85)

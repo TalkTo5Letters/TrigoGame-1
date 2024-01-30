@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://don26gpb5xolw"]
+[gd_scene load_steps=13 format=3 uid="uid://don26gpb5xolw"]
 
 [ext_resource type="Texture2D" uid="uid://dkk4lnkgrxcl6" path="res://graphics/icon.svg" id="1_0yrqt"]
 [ext_resource type="Script" path="res://scenes/levels/teleport.gd" id="2_cufdn"]
@@ -15,6 +15,8 @@ size = Vector2(119, 117)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_pmj4v"]
 size = Vector2(117, 8)
+
+[sub_resource type="ImageTexture" id="ImageTexture_krf0m"]
 
 [node name="level1" type="Node2D"]
 
@@ -53,6 +55,10 @@ script = ExtResource("7_wu3wp")
 
 [node name="enemy1" parent="." instance=ExtResource("8_tv7ec")]
 position = Vector2(120, 223)
+
+[node name="Sprite2D2" type="Sprite2D" parent="."]
+position = Vector2(-111, -31)
+texture = SubResource("ImageTexture_krf0m")
 
 [node name="fight_scene" type="Control" parent="."]
 layout_mode = 3

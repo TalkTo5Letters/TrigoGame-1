@@ -3,7 +3,8 @@ var text = "gyahaha"
 var answer
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	$Label.text = text
+	$TextureRect/Label.text = text
+	$TextureRect/Label.set_horizontal_alignment(1)
 	$TextureRect.text = text
 	$TextureRect.answer = answer
 	pass
