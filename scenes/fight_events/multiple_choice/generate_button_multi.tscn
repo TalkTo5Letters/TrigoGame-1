@@ -30,12 +30,14 @@ mouse_filter = 0
 texture = SubResource("AtlasTexture_ymkj4")
 script = ExtResource("3_3cd03")
 
-[node name="Label" type="Label" parent="."]
+[node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = 7.0
-offset_top = 27.0
-offset_right = 147.0
-offset_bottom = 101.0
+offset_left = 5.0
+offset_top = 22.0
+offset_right = 123.0
+offset_bottom = 82.0
+text = "kghhk"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 3
+clip_text = true

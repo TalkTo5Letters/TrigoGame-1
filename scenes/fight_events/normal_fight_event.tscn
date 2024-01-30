@@ -32,10 +32,6 @@ region = Rect2(945, 13, 126, 166)
 atlas = ExtResource("8_yx6ve")
 region = Rect2(22, 251, 360, 435)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_ssco3"]
-atlas = ExtResource("8_yx6ve")
-region = Rect2(601, 512, 318, 62)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_xud0l"]
 atlas = ExtResource("10_kaji2")
 region = Rect2(1045, 13, 126, 166)
@@ -43,6 +39,10 @@ region = Rect2(1045, 13, 126, 166)
 [sub_resource type="AtlasTexture" id="AtlasTexture_1t1lj"]
 atlas = ExtResource("11_mbo3p")
 region = Rect2(1045, 13, 125, 125)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_mn3wk"]
+atlas = ExtResource("8_yx6ve")
+region = Rect2(601, 512, 318, 62)
 
 [node name="normal_fight_event" type="Control"]
 layout_mode = 3
@@ -74,6 +74,7 @@ offset_right = 204.0
 offset_bottom = 250.0
 theme = SubResource("Theme_iqgh5")
 theme_override_font_sizes/font_size = 50
+action_mode = 0
 text = "Restart"
 script = ExtResource("5_io6vd")
 
@@ -141,10 +142,6 @@ texture = SubResource("AtlasTexture_ckblv")
 position = Vector2(181, 482)
 texture = SubResource("AtlasTexture_wbwb0")
 
-[node name="Sprite2D4" type="Sprite2D" parent="."]
-position = Vector2(179, 689)
-texture = SubResource("AtlasTexture_ssco3")
-
 [node name="Timer" type="Timer" parent="."]
 wait_time = 60.0
 
@@ -160,3 +157,15 @@ fill_mode = 5
 texture_over = SubResource("AtlasTexture_xud0l")
 texture_progress = SubResource("AtlasTexture_1t1lj")
 script = ExtResource("12_g5bxp")
+
+[node name="player_hp" type="TextureProgressBar" parent="."]
+z_index = 4
+layout_mode = 0
+offset_left = 33.0
+offset_top = 657.0
+offset_right = 351.0
+offset_bottom = 719.0
+value = 100.0
+texture_progress = SubResource("AtlasTexture_mn3wk")
+
+[connection signal="timeout" from="Timer" to="check_ans" method="_on_timer_timeout"]
