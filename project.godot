@@ -21,11 +21,11 @@ import/import_plugin/default_automatic_importer="Static Texture"
 
 [autoload]
 
+Global="*res://autoload/global.gd"
+EventHandler="*res://autoload/event_handler.gd"
+KillList="*res://autoload/kill_list.gd"
 DialogueState="*res://Dialogue/dialogue_state.gd"
 DialogueManager="*res://addons/dialogue_manager/dialogue_manager.gd"
-EventHandler="*res://autoload/event_handler.gd"
-Global="*res://autoload/global.gd"
-KillList="*res://autoload/kill_list.gd"
 
 [dialogue_manager]
 
@@ -35,6 +35,10 @@ general/states=["DialogueState"]
 
 window/size/viewport_width=1080
 window/size/viewport_height=720
+window/size/mode=2
+window/stretch/mode="viewport"
+window/stretch/aspect="ignore"
+window/stretch/scale_mode="integer"
 
 [editor_plugins]
 

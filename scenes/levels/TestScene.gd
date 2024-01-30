@@ -6,6 +6,7 @@ func _ready():
 	if Global.first_boot == true:
 		Global.hp = 100
 		Global.first_boot == false
+	position = Global.player_last_pos
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.

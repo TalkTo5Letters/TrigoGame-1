@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://bep3n876tvn3n"]
+[gd_scene load_steps=3 format=3 uid="uid://bep3n876tvn3n"]
 
 [ext_resource type="Script" path="res://scenes/fight_events/fill_in_blanks/droppable_area.gd" id="1_7mmhd"]
+[ext_resource type="FontFile" uid="uid://dn6uysy7dmr03" path="res://graphics/Silkscreen-Regular.ttf" id="1_cgbu2"]
 
 [node name="DroppableArea" type="Button"]
 custom_minimum_size = Vector2(72, 72)
@@ -11,4 +12,5 @@ offset_right = -1072.0
 offset_bottom = -712.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_cgbu2")
 script = ExtResource("1_7mmhd")

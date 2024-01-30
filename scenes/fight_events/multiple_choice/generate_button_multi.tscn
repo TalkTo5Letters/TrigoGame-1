@@ -1,8 +1,9 @@
-[gd_scene load_steps=5 format=3 uid="uid://bur6jj2q7rytn"]
+[gd_scene load_steps=6 format=3 uid="uid://bur6jj2q7rytn"]
 
 [ext_resource type="Script" path="res://scenes/fight_events/multiple_choice/generate_button_multi.gd" id="1_jn4aw"]
 [ext_resource type="Texture2D" uid="uid://bc18cv1bcu1qo" path="res://graphics/pvp_ui.png" id="2_7whq8"]
 [ext_resource type="Script" path="res://scenes/fight_events/multiple_choice/TextureRect.gd" id="3_3cd03"]
+[ext_resource type="FontFile" uid="uid://dn6uysy7dmr03" path="res://graphics/Silkscreen-Regular.ttf" id="4_1p48t"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ymkj4"]
 atlas = ExtResource("2_7whq8")
@@ -17,7 +18,7 @@ offset_right = -926.0
 offset_bottom = -600.0
 grow_horizontal = 2
 grow_vertical = 2
-mouse_filter = 1
+mouse_filter = 2
 script = ExtResource("1_jn4aw")
 
 [node name="TextureRect" type="TextureRect" parent="."]
@@ -37,6 +38,7 @@ offset_left = 5.0
 offset_top = 22.0
 offset_right = 123.0
 offset_bottom = 82.0
+theme_override_fonts/font = ExtResource("4_1p48t")
 text = "kghhk"
 horizontal_alignment = 1
 vertical_alignment = 1
