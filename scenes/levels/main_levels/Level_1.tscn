@@ -1,14 +1,14 @@
-[gd_scene load_steps=20 format=3 uid="uid://bhhsiesieayn7"]
+[gd_scene load_steps=19 format=3 uid="uid://bhhsiesieayn7"]
 
 [ext_resource type="Texture2D" uid="uid://cwgalg8iclaxq" path="res://graphics/light.png" id="1_2dne0"]
 [ext_resource type="Script" path="res://scenes/levels/main_levels/Level_1.gd" id="1_cmrbb"]
 [ext_resource type="PackedScene" uid="uid://t3sr75pxjqim" path="res://scenes/characters/player/player.tscn" id="1_cx0ug"]
 [ext_resource type="Texture2D" uid="uid://cuytdxdhrglxb" path="res://graphics/Tilemaps/lvl1tilemap.png" id="2_4t2ib"]
-[ext_resource type="Texture2D" uid="uid://b85nlip5lg2vh" path="res://graphics/fog.png" id="2_v4mqb"]
+[ext_resource type="PackedScene" uid="uid://bxhiemcky8plo" path="res://player_scripts/fog.tscn" id="4_1djxp"]
 [ext_resource type="PackedScene" uid="uid://ca7ndbpcqmaqx" path="res://scenes/objects/interactable.tscn" id="4_kmy5y"]
-[ext_resource type="Script" path="res://scenes/levels/main_levels/Area2D.gd" id="4_lf8u0"]
 [ext_resource type="Script" path="res://scenes/levels/main_levels/door_teleport.gd" id="4_v764y"]
 [ext_resource type="Texture2D" uid="uid://bt2dvsfgwwnfk" path="res://graphics/Untitled.png" id="7_4oec0"]
+[ext_resource type="PackedScene" uid="uid://ciefe322osmvy" path="res://player_scripts/dontpass.tscn" id="10_5uatn"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_q06aq"]
 resource_name = "tiles_level1"
@@ -1417,9 +1417,6 @@ terrain_set_0/terrain_0/color = Color(0.32549, 0.972549, 0, 1)
 sources/0 = SubResource("TileSetAtlasSource_q06aq")
 sources/1 = SubResource("TileSetAtlasSource_lqaj0")
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_dvdox"]
-size = Vector2(227.125, 247.5)
-
 [sub_resource type="NavigationPolygon" id="NavigationPolygon_1a3u7"]
 vertices = PackedVector2Array(28, 1073, 35, 1112, 0, 1123, -31, 1109, -31, 1062, 28, 958, -82, 843, -67, 700, -83, 842, -119, 744, -122, 629, -67, 590, -146, 558, -107, 494, -106, 494, 81, 386, 5, 392, 14, 210, -29, 251, -78, 142, -141, 165, -43, 4, -139, 14, -89, -224, -167, -9, 35, -508, 28, -177, -42, 2, -93, -438, -68, -526, -4, -532)
 polygons = Array[PackedInt32Array]([PackedInt32Array(0, 1, 2, 3, 4), PackedInt32Array(5, 0, 4, 6, 7), PackedInt32Array(7, 6, 8, 9, 10, 11), PackedInt32Array(11, 10, 12, 13, 14), PackedInt32Array(15, 11, 14, 16), PackedInt32Array(17, 15, 16, 18), PackedInt32Array(19, 17, 18, 20), PackedInt32Array(21, 19, 20, 22, 23), PackedInt32Array(22, 24, 23), PackedInt32Array(25, 26, 27, 21, 23, 28, 29, 30)])
@@ -1513,8 +1510,16 @@ _data = {
 [node name="Level1" type="Node2D"]
 y_sort_enabled = true
 script = ExtResource("1_cmrbb")
-metadata/_edit_horizontal_guides_ = [-338.0]
-metadata/_edit_vertical_guides_ = [-601.0]
+metadata/_edit_horizontal_guides_ = [1669.0]
+metadata/_edit_vertical_guides_ = [-793.0, 816.0]
+
+[node name="ColorRect2" type="ColorRect" parent="."]
+z_index = 1
+offset_left = -1623.0
+offset_top = 1491.0
+offset_right = 1474.0
+offset_bottom = 3415.0
+color = Color(0, 0, 0, 1)
 
 [node name="abyss" type="PointLight2D" parent="."]
 position = Vector2(-26, 2020)
@@ -1526,9 +1531,8 @@ range_layer_max = 6
 range_item_cull_mask = 7
 texture = ExtResource("1_2dne0")
 
-[node name="abyss4" type="PointLight2D" parent="."]
-position = Vector2(24, -1437)
-scale = Vector2(8.5275, 3.63)
+[node name="abyss4" type="PointLight2D" parent="abyss"]
+position = Vector2(5.86338, -952.342)
 energy = 16.0
 blend_mode = 1
 range_layer_min = -2
@@ -1536,9 +1540,9 @@ range_layer_max = 6
 range_item_cull_mask = 7
 texture = ExtResource("1_2dne0")
 
-[node name="abyss2" type="PointLight2D" parent="."]
-position = Vector2(-938.188, 513.5)
-scale = Vector2(2.91406, 12.9425)
+[node name="abyss2" type="PointLight2D" parent="abyss"]
+position = Vector2(-103.723, -415.014)
+scale = Vector2(0.357959, 3.56543)
 energy = 16.0
 blend_mode = 1
 range_layer_min = -2
@@ -1546,9 +1550,9 @@ range_layer_max = 6
 range_item_cull_mask = 7
 texture = ExtResource("1_2dne0")
 
-[node name="abyss3" type="PointLight2D" parent="."]
-position = Vector2(855, 547)
-scale = Vector2(2.91406, 12.9425)
+[node name="abyss3" type="PointLight2D" parent="abyss"]
+position = Vector2(99.0802, -405.785)
+scale = Vector2(0.362889, 3.56543)
 energy = 16.0
 blend_mode = 1
 range_layer_min = -2
@@ -1560,16 +1564,7 @@ texture = ExtResource("1_2dne0")
 z_index = 1
 position = Vector2(-8, 1234)
 
-[node name="fog" type="PointLight2D" parent="Player"]
-position = Vector2(0.999992, 4)
-scale = Vector2(0.948125, 0.707812)
-energy = 1.05
-blend_mode = 1
-range_layer_min = -2
-range_layer_max = 6
-range_item_cull_mask = 7
-texture = ExtResource("2_v4mqb")
-texture_scale = 1.6
+[node name="fog" parent="Player" instance=ExtResource("4_1djxp")]
 
 [node name="TileMap" type="TileMap" parent="."]
 y_sort_enabled = true
@@ -1588,16 +1583,6 @@ layer_3/z_index = 1
 layer_3/tile_data = PackedInt32Array(-2490368, 655360, 3, -3342336, 1507328, 12, 5177343, 65536, 0, 5111809, 0, 1, 2686963, 196608, 0, 1310727, 196608, 2, 1245190, 131072, 3, 196597, 3276800, 8)
 layer_4/name = "wall"
 layer_4/tile_data = PackedInt32Array(1179657, 458752, 0, 65521, 851968, 1, 65522, 917504, 1, 65523, 983040, 1, 65524, 1048576, 1, 2621432, 851968, 268435457, 2621431, 917504, 268435457, 2621430, 983040, 268435457, 2621429, 1048576, 268435457, 4784129, 458752, 0)
-
-[node name="Area2D" type="Area2D" parent="TileMap" node_paths=PackedStringArray("collision_shape_path", "player")]
-position = Vector2(-139, 34)
-script = ExtResource("4_lf8u0")
-collision_shape_path = NodePath("CollisionShape2D")
-player = NodePath("../../Player")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="TileMap/Area2D"]
-position = Vector2(936, 316)
-shape = SubResource("RectangleShape2D_dvdox")
 
 [node name="door_teleport" type="Node2D" parent="."]
 position = Vector2(5, -806)
@@ -1637,17 +1622,33 @@ libraries = {
 scale = Vector2(7.5, 7.5)
 shape = SubResource("CircleShape2D_202mi")
 
-[node name="ColorRect" type="ColorRect" parent="."]
+[node name="test_colro" type="ColorRect" parent="."]
 visible = false
 z_index = 1
-offset_left = -1681.0
-offset_top = -1486.0
-offset_right = 1270.0
-offset_bottom = 1327.0
+offset_left = -1426.0
+offset_top = -957.0
+offset_right = 1525.0
+offset_bottom = 1856.0
 
-[connection signal="area_entered" from="TileMap/Area2D" to="Player" method="_on_area_2d_area_entered"]
-[connection signal="area_exited" from="TileMap/Area2D" to="TileMap/Area2D" method="_on_area_exited"]
-[connection signal="interactable_met" from="door_teleport/Interactable" to="TileMap/Area2D" method="_on_interactable_interactable_met"]
+[node name="GETBACKHEREBITCH3" parent="." node_paths=PackedStringArray("fog") instance=ExtResource("10_5uatn")]
+position = Vector2(-1890, 2727)
+fog = NodePath("../Player/fog")
+shit = Vector2(0, -700)
+
+[node name="GETBACKHEREBITCH4" parent="." node_paths=PackedStringArray("fog") instance=ExtResource("10_5uatn")]
+position = Vector2(-1846, -2617)
+fog = NodePath("../Player/fog")
+shit = Vector2(0, 700)
+
+[node name="GETBACKHEREBITCH2" parent="." node_paths=PackedStringArray("fog") instance=ExtResource("10_5uatn")]
+position = Vector2(-3755, 74)
+fog = NodePath("../Player/fog")
+
+[node name="GETBACKHEREBITCH" parent="." node_paths=PackedStringArray("fog") instance=ExtResource("10_5uatn")]
+position = Vector2(20, 56)
+fog = NodePath("../Player/fog")
+shit = Vector2(-1550, 0)
+
 [connection signal="interactable_met" from="door_teleport/Interactable" to="door_teleport" method="_on_interactable_interactable_met"]
 [connection signal="navigation_finished" from="Twinkie/CharacterBody2D/NavigationAgent2D" to="Twinkie/CharacterBody2D" method="_on_navigation_agent_2d_navigation_finished"]
 [connection signal="animation_finished" from="Twinkie/CharacterBody2D/AnimationPlayer" to="Twinkie/CharacterBody2D" method="_on_animation_player_animation_finished"]

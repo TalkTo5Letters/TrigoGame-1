@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://ciefe322osmvy"]
+
+[ext_resource type="Script" path="res://scenes/levels/main_levels/GETBACKHEREBITCH.gd" id="1_uaab3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qhckx"]
+size = Vector2(2171.75, 2672.25)
+
+[node name="GETBACKHEREBITCH" type="Area2D"]
+script = ExtResource("1_uaab3")
+shit = Vector2(-1200, 0)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+light_mask = 0
+z_index = 5
+position = Vector2(1879, 304)
+shape = SubResource("RectangleShape2D_qhckx")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
+[connection signal="body_shape_entered" from="." to="." method="_on_body_shape_entered"]

@@ -1,0 +1,130 @@
+[gd_scene load_steps=17 format=3 uid="uid://bxhiemcky8plo"]
+
+[ext_resource type="Script" path="res://player_scripts/fog.gd" id="1_q3lgq"]
+
+[sub_resource type="Gradient" id="Gradient_2cnyb"]
+offsets = PackedFloat32Array(0, 0.617391, 0.730435)
+colors = PackedColorArray(0, 0, 0, 1, 0.951669, 0.951669, 0.951669, 1, 1, 1, 1, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_qba8h"]
+gradient = SubResource("Gradient_2cnyb")
+height = 57
+fill = 1
+fill_from = Vector2(0.5, 0.5)
+metadata/_snap_enabled = true
+
+[sub_resource type="Animation" id="Animation_aefdm"]
+resource_name = "fog_in"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(16, -0.25, 0, 0.25, 0, 1.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_hf3gd"]
+resource_name = "fog_out"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0),
+"points": PackedFloat32Array(1.1, -0.25, 0, 0.25, 0, 16, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 1)
+}
+
+[sub_resource type="Animation" id="Animation_10prd"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="Animation" id="Animation_3jfqr"]
+resource_name = "Idle_normal"
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:energy")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(1.1, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_c4hsr"]
+_data = {
+"Idle_normal": SubResource("Animation_3jfqr"),
+"RESET": SubResource("Animation_10prd"),
+"fog_in": SubResource("Animation_aefdm"),
+"fog_out": SubResource("Animation_hf3gd")
+}
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_uat3n"]
+animation = &"Idle_normal"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_wm0ca"]
+animation = &"fog_in"
+
+[sub_resource type="AnimationNodeAnimation" id="AnimationNodeAnimation_esg2p"]
+animation = &"fog_out"
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_5t00t"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_8nab8"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_q63sd"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_4qlqr"]
+
+[sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_cs8g5"]
+states/Idle_normal/node = SubResource("AnimationNodeAnimation_uat3n")
+states/Idle_normal/position = Vector2(349, 101.519)
+states/fog_in/node = SubResource("AnimationNodeAnimation_wm0ca")
+states/fog_in/position = Vector2(369, 7)
+states/fog_out/node = SubResource("AnimationNodeAnimation_esg2p")
+states/fog_out/position = Vector2(547.667, 76.3333)
+transitions = ["Start", "Idle_normal", SubResource("AnimationNodeStateMachineTransition_5t00t"), "Idle_normal", "fog_in", SubResource("AnimationNodeStateMachineTransition_8nab8"), "fog_in", "fog_out", SubResource("AnimationNodeStateMachineTransition_q63sd"), "fog_out", "Idle_normal", SubResource("AnimationNodeStateMachineTransition_4qlqr")]
+graph_offset = Vector2(-91, -7)
+
+[node name="fog" type="PointLight2D"]
+position = Vector2(0.999992, 4)
+scale = Vector2(0.948125, 0.707812)
+energy = 0.0
+blend_mode = 1
+range_layer_min = -2
+range_layer_max = 6
+range_item_cull_mask = 7
+texture = SubResource("GradientTexture2D_qba8h")
+texture_scale = 9.29
+script = ExtResource("1_q3lgq")
+
+[node name="AnimationTree" type="AnimationTree" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c4hsr")
+}
+tree_root = SubResource("AnimationNodeStateMachine_cs8g5")
+anim_player = NodePath("../AnimationPlayer")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_c4hsr")
+}

@@ -1,8 +1,9 @@
-[gd_scene load_steps=32 format=3 uid="uid://d04uypd6pvbls"]
+[gd_scene load_steps=33 format=3 uid="uid://d04uypd6pvbls"]
 
 [ext_resource type="Script" path="res://player_scripts/ss_PlayerAnimation.gd" id="2_4x6d4"]
 [ext_resource type="Texture2D" uid="uid://y51xqoeed847" path="res://graphics/char.png" id="2_mhlgh"]
 [ext_resource type="Script" path="res://player_scripts/ss_movement.gd" id="3_51ol1"]
+[ext_resource type="Texture2D" uid="uid://kdnlmvfwacuo" path="res://graphics/familiar_annoying_character.png" id="4_yxxd5"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_xhc1l"]
 radius = 6.0
@@ -294,3 +295,19 @@ script = ExtResource("2_4x6d4")
 [node name="ss_movement" type="Node2D" parent="."]
 script = ExtResource("3_51ol1")
 speed = 6500
+
+[node name="RigidBody2D" type="RigidBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="RigidBody2D"]
+texture_filter = 1
+position = Vector2(14, -25)
+texture = ExtResource("4_yxxd5")
+
+[node name="DampedSpringJoint2D" type="DampedSpringJoint2D" parent="."]
+position = Vector2(5, -17)
+rotation = -2.30907
+node_a = NodePath("..")
+node_b = NodePath("../RigidBody2D")
+length = 10.0
+stiffness = 55.0
+damping = 16.0

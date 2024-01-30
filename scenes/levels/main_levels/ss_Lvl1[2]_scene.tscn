@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://io111jspv0m7"]
+[gd_scene load_steps=15 format=3 uid="uid://io111jspv0m7"]
 
 [ext_resource type="PackedScene" uid="uid://d04uypd6pvbls" path="res://player_scripts/ss_player.tscn" id="2_fa1il"]
 [ext_resource type="Texture2D" uid="uid://b3p6hrc7nridg" path="res://graphics/LevelSpecific/map1[2]]/background.png" id="2_q145x"]
@@ -9,9 +9,15 @@
 [ext_resource type="Texture2D" uid="uid://d3vnuamdpnai3" path="res://graphics/LevelSpecific/map1[2]]/star2_lvl1[2].png" id="7_xurmy"]
 [ext_resource type="Texture2D" uid="uid://wpvasd8qfdta" path="res://graphics/LevelSpecific/map1[2]]/star3_lvl1[2].png" id="8_ybg83"]
 [ext_resource type="Texture2D" uid="uid://djr3qnuag0183" path="res://graphics/LevelSpecific/map1[2]]/star4_lvl1[2].png" id="9_2dgwe"]
+[ext_resource type="Texture2D" uid="uid://cwgalg8iclaxq" path="res://graphics/light.png" id="10_70h20"]
+[ext_resource type="Texture2D" uid="uid://c0yxfjq4blkq8" path="res://graphics/LevelSpecific/map1[2]]/city.png" id="10_xrifg"]
+[ext_resource type="Texture2D" uid="uid://dk2qlsltetstq" path="res://graphics/LevelSpecific/map1[2]]/city2.png" id="11_kn8ql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_hbsqv"]
-size = Vector2(2642, 20)
+size = Vector2(3872.5, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_b5u4d"]
+size = Vector2(47, 458)
 
 [node name="SS_TestScene" type="Node2D"]
 
@@ -31,15 +37,45 @@ offset_right = 2618.0
 offset_bottom = 321.0
 color = Color(0, 0, 0, 1)
 
+[node name="ColorRect" type="ColorRect" parent="ColorRect"]
+layout_mode = 0
+offset_left = 2652.0
+offset_top = -44.0
+offset_right = 3713.0
+offset_bottom = 177.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = -3029.0
+offset_top = -519.0
+offset_right = -1968.0
+offset_bottom = 221.0
+color = Color(0, 0, 0, 1)
+
+[node name="ColorRect" type="ColorRect" parent="ColorRect/ColorRect/ColorRect"]
+layout_mode = 0
+offset_left = 3138.0
+offset_top = -1.0
+offset_right = 4199.0
+offset_bottom = 739.0
+color = Color(0, 0, 0, 1)
+
 [node name="StaticBody2D" type="StaticBody2D" parent="."]
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D"]
-position = Vector2(321, 72)
+position = Vector2(-27.25, 79)
 shape = SubResource("RectangleShape2D_hbsqv")
 
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D"]
+position = Vector2(-1006, -59)
+shape = SubResource("RectangleShape2D_b5u4d")
+
 [node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+layer = -10
 
 [node name="Layer" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-750, 0)
 motion_mirroring = Vector2(2000, 0)
 
 [node name="Background" type="Sprite2D" parent="ParallaxBackground/Layer"]
@@ -56,8 +92,10 @@ rotation = 3.14159
 texture = ExtResource("2_q145x")
 
 [node name="Layer2" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, 50)
+position = Vector2(-750, 50)
 motion_scale = Vector2(0.1, 0.1)
+motion_offset = Vector2(0, -208)
+motion_mirroring = Vector2(2000, 208)
 
 [node name="Star1Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer2"]
 z_index = -1
@@ -66,8 +104,10 @@ position = Vector2(0, 20)
 texture = ExtResource("6_idfwm")
 
 [node name="Layer3" type="ParallaxLayer" parent="ParallaxBackground"]
-position = Vector2(0, 50)
+position = Vector2(-750, 50)
 motion_scale = Vector2(0.5, 0.5)
+motion_offset = Vector2(0, -208)
+motion_mirroring = Vector2(2000, 208)
 
 [node name="Star2Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer3"]
 z_index = -1
@@ -76,7 +116,9 @@ position = Vector2(0, 5)
 texture = ExtResource("7_xurmy")
 
 [node name="Layer4" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-750, 0)
 motion_scale = Vector2(0.25, 0.25)
+motion_mirroring = Vector2(2000, 0)
 
 [node name="Star3Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer4"]
 z_index = -1
@@ -85,7 +127,9 @@ position = Vector2(0, 5)
 texture = ExtResource("8_ybg83")
 
 [node name="Layer5" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(-750, 0)
 motion_scale = Vector2(0.8, 0.8)
+motion_mirroring = Vector2(2000, 0)
 
 [node name="Star4Lvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer5"]
 z_index = -1
@@ -94,7 +138,9 @@ position = Vector2(0, 5)
 texture = ExtResource("9_2dgwe")
 
 [node name="Layer6" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(2, 2)
+position = Vector2(-750, 0)
+motion_scale = Vector2(2, 0)
+motion_mirroring = Vector2(2000, 0)
 
 [node name="ParallaxPostBackLvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer6"]
 z_index = -1
@@ -103,10 +149,56 @@ position = Vector2(0, 5)
 texture = ExtResource("4_n3ayd")
 
 [node name="Layer7" type="ParallaxLayer" parent="ParallaxBackground"]
-motion_scale = Vector2(0.9, 0.9)
+position = Vector2(-750, 0)
+motion_scale = Vector2(0.9, 0)
+motion_mirroring = Vector2(2000, 0)
 
 [node name="ParallaxPostFrontLvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer7"]
 z_index = -1
 texture_filter = 1
 position = Vector2(0, 5)
 texture = ExtResource("5_jyhan")
+
+[node name="Layer8" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 150)
+motion_scale = Vector2(0.6, 0)
+motion_mirroring = Vector2(2000, 0)
+
+[node name="ParallaxPostFrontLvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer8"]
+z_index = 4
+z_as_relative = false
+texture_filter = 1
+position = Vector2(0, 5)
+texture = ExtResource("10_xrifg")
+
+[node name="Layer9" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(0, 150)
+motion_scale = Vector2(0.5, 0)
+motion_mirroring = Vector2(2000, 0)
+
+[node name="ParallaxPostFrontLvl1[2]" type="Sprite2D" parent="ParallaxBackground/Layer9"]
+z_index = 4
+texture_filter = 1
+position = Vector2(0, 20)
+texture = ExtResource("11_kn8ql")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+position = Vector2(34, 59)
+scale = Vector2(4.33, 1.005)
+energy = 14.0
+blend_mode = 1
+texture = ExtResource("10_70h20")
+
+[node name="PointLight2D3" type="PointLight2D" parent="."]
+position = Vector2(1434, 63)
+scale = Vector2(2.90781, 2.44141)
+energy = 5.13
+blend_mode = 1
+texture = ExtResource("10_70h20")
+
+[node name="PointLight2D2" type="PointLight2D" parent="."]
+position = Vector2(-1099, -48)
+scale = Vector2(1.275, 1.5625)
+energy = 14.0
+blend_mode = 1
+texture = ExtResource("10_70h20")
